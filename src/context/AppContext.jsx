@@ -17,7 +17,7 @@ const AppContextProvider = (props) => {
     const getDoctorsData = async() => {
         setLoading(true);
         try {
-            const {data} = await axios.get('http://localhost:5000/api/doctor/list')
+            const {data} = await axios.get('https://doctorappointment-backend-bfnr.onrender.com/api/doctor/list')
             if(data.success){
                 setDoctors(data.doctors);
             }
@@ -36,7 +36,7 @@ const AppContextProvider = (props) => {
     // getting user profile
     const loadUserProfileData = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/user/get-profile', {headers: { token }});
+            const { data } = await axios.get('https://doctorappointment-backend-bfnr.onrender.com/api/user/get-profile', {headers: { token }});
 
             if(data.success){
                 setUserData(data.userData);

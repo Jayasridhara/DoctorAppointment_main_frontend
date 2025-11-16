@@ -102,7 +102,7 @@ const Appointment = () => {
 
         try {
 
-            const { data } = await axios.post('http://localhost:5000/api/user/book-appointment', { docId, slotDate, slotTime }, { headers: { token } })
+            const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/user/book-appointment', { docId, slotDate, slotTime }, { headers: { token } })
             if (data.success) {
                 toast.success(data.message)
                 getDoctorsData()

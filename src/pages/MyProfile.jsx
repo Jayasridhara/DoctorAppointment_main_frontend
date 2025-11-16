@@ -26,7 +26,7 @@ const MyProfile = () => {
 
       image && formData.append('image', image)
 
-      const { data } = await axios.post('http://localhost:5000/api/user/update-profile', formData, {headers: {token}});
+      const { data } = await axios.post('https://doctorappointment-backend-bfnr.onrender.com/api/user/update-profile', formData, {headers: {token}});
 
       if(data.success){
         toast.success(data.message);
